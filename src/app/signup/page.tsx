@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import Logo from "../../../components/Logo";
+import Logo from "@/components/Logo";
 import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

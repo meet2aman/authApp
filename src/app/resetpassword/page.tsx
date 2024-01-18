@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
-import Logo from "../../../components/Logo";
+import Logo from "@/components/Logo";
 import Link from "next/link";
 import axios from "axios";
 

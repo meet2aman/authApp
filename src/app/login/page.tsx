@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import axios from "axios";
 
-import Logo from "../../../components/Logo";
+import Logo from "@/components/Logo";
 import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
 import { FcGoogle } from "@react-icons/all-files/fc/FcGoogle";
 import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
