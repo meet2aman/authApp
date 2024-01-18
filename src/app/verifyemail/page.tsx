@@ -55,7 +55,7 @@ const verifyEmailPage = () => {
             <Logo />
           </a>
 
-          <h1 className="text-2xl flex tracking-wider items-start w-full text-white pt-4">
+          <h1 className="text-2xl text-center flex tracking-wider items-start w-full text-white pt-4">
             Verify Email
           </h1>
           {/* <h2 className="p-2 bg-orange-600 text-black text-xl font-bold rounded">
@@ -91,8 +91,8 @@ const verifyEmailPage = () => {
           {error && (
             <div className="mt-2 flex flex-col justify-center items-center">
               <p className=" text-gray-400">
-                There is some error by which your emai not verified successfully
-                But You Can Still Login.
+                There is some error by which your email not verified
+                successfully But You Can Still Login.
               </p>
 
               <Image

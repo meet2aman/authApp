@@ -1,9 +1,29 @@
+"use client";
 import Image from "next/image";
 import { Nunito } from "next/font/google";
 import Link from "next/link";
+import axios from "axios";
+import { toast } from "react-toastify";
+
+import { useRouter } from "next/navigation";
 const nunito = Nunito({ subsets: ["latin"] });
 
 export default function Home() {
+  const router = useRouter();
+  const logout = async () => {
+    try {
+      await axios.get("/api/users/logout");
+      toast.success("User logged out");
+      setTimeout(() => {
+        router.push("/login");
+      }, 2000);
+      console.log("Logged out");
+    } catch (error: any) {
+      console.log(error.message);
+      toast.error(error.message);
+    }
+  };
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 {nunito.className}">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -81,10 +101,11 @@ export default function Home() {
         </Link>
 
         <Link
-          href="/logout"
+          href="/"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors bg-orange-600 hover:border-gray-300 hover:bg-bg-orange-600 hover:dark:border-neutral-700 hover:dark:bg-orange-700"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={logout}
         >
           <h2 className={`mb-3 text-2xl font-bold text-white`}>
             Logout{" "}
