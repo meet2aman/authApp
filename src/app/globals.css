@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+@font-face {
+  font-family: "Nunito"; /*Can be any text*/
+  src: local("Nunito"),
+    url("../../public/fonts/Nunito/Nunito-VariableFont_wght.ttf")
+      format("truetype");
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #171717;
+  font-family: "Nunito", sans-serif;
+}
+
+.primary-button,
+.secondary-button {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600 !important;
+  padding: 8px 0;
+}
+.primary-button {
+  background-color: #fff;
+  color: #0f1419;
+}
+.primary-button:hover {
+  background-color: #e6e6e6;
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #536471;
+}
+.secondary-button:hover {
+  background-color: #181919;
+}
+
+.divider p::before,
+.divider p::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45%;
+  height: 2px;
+  /* background-color: #333639; */
+  background-color: #fd0012;
+}
+
+.divider p::before {
+  left: 0;
+}
+.divider p::after {
+  right: 0;
+}
+input::-webkit-input-placeholder {
+  opacity: 0;
+}
+input + label {
+  position: absolute;
+  top: 18px;
+  left: 12px;
+  color: #71767b;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 200ms ease;
+}
+
+input:focus {
+  outline: 1px solid #fd0012;
+}
+
+input:focus + label {
+  color: #fd0012;
+}
+input:not(:placeholder-shown) + label,
+input:focus + label {
+  top: 6px;
+  left: 10px;
+  font-size: 12px;
+}
+
+.email-log-in {
+  width: 100%;
+  position: relative;
+}
+.email-log-in input {
+  width: 100%;
+  border-radius: 6px;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #fd0012;
+  color: white;
+  font-size: 16px;
+  padding: 18px 10px;
+}
+
+.Signup {
+  content: "Signup";
+  text-decoration: line-through;
+}
+.SignUp {
+  content: "Signup";
+text-decoration: underline;
+}
