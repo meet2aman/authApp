@@ -5,7 +5,7 @@ import { connect } from "../../../../dbConfig/dbConfig";
 
 connect();
 
-export async function GET(request: NextRequest) {
+export const GET = async (request: NextRequest) => {
   try {
     const userID = await getDataFromToken(request);
     const user = await User.findOne({ _id: userID }).select(
@@ -16,6 +16,6 @@ export async function GET(request: NextRequest) {
       data: user,
     });
   } catch (error: any) {
-    NextResponse.json({ error: error.message }, { status: 400 });
+    return NextResponse.json({ error: error.message }, { status: 400 });
   }
-}
+};

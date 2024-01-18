@@ -26,13 +26,14 @@ export default function ProfilePage() {
     }
   };
 
-  useEffect(() => {
-    const getUserDetails = async () => {
+  const getUserDetails = async () => {
+    try {
       const response = await axios.get("/api/users/me");
       setData(response.data.data.username);
-    };
-    getUserDetails();
-  }, []);
+    } catch (error: any) {
+      console.log(error.message);
+    }
+  };
 
   return (
     <>
@@ -51,7 +52,7 @@ export default function ProfilePage() {
 
           <button
             className="p-3 mt-6 text-white bg-black text-xl text-center rounded-xl transition shadow-md shadow-white hover:text-red-600 hover:bg-white hover:shadow-red-600 hover:ease-in hover:transition "
-            onClick={() => {}}
+            onClick={getUserDetails}
           >
             Get User Details
           </button>
